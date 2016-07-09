@@ -2,7 +2,7 @@
 title: /dav/null
 tagline: Posts about code etc. 
 author: dvalts 
-email: dvalts@gmail.coom
+email: dvalts@gmail.com
 description: "dvalts' ramblings about code and life" # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
 keywords: "c++, python"
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -13,7 +13,7 @@ locale: en_US
 twitter_username: dvalts
 github_username:  decvalts
 favicon:     "/images/favicon.ico"
-aboutme: THello, World! # these are shown on aboutme-sidebar.
+aboutme: Hello, World! # these are shown on aboutme-sidebar.
 aboutme_photo:  # your photo.
 
 

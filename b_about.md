@@ -6,14 +6,13 @@ permalink: /about/
 ---
 
 
-### LSDTopoTools coding blog.
+### dvalts' blog
 
-Random thoughts and code snippets in c++ and python. 
+Random thoughts about code and sometimes other things
 
 This website is based on the [Freshmen21 theme](https://http://jekyllthemes.org/themes/freshman21/) by [Lijia Yu](http://yulijia.net/).
 
-
-#### Image in the homepage is a drainage capture site near Sorbas, Spain, analysed with our software. 
+ 
 
 
 

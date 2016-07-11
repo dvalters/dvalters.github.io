@@ -53,8 +53,8 @@ The setup.py file will handle the compilation of our C++ and Cython code (no mak
 
 **rectangle_wrapper.pyx**
 {% highlight python %}
-This is a Cython file and extracts the relevant classes from the C++ header file.
-In [ ]:
+#This is a Cython file and extracts the relevant classes from the C++ header file.
+
 # distutils: language = c++
 # distutils: sources = rectangle.cpp
 

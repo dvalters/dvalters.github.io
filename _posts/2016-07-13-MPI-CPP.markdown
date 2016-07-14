@@ -1,0 +1,7 @@
+---
+layout: post
+title: Intro to MPI programming  in C++
+tags: c++ MPI parallel-proecessing
+---
+
+**Some notes from the MPI course at EPCC, Summer 2016**

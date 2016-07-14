@@ -5,3 +5,13 @@ tags: c++ MPI parallel-proecessing
 ---
 
 **Some notes from the MPI course at EPCC, Summer 2016**
+
+MPI is the **Message Passing Interface**, a standard and series of libraries for writing parallel programs to run on distributed memory computing systems. Distributed memory systems are essentially a series of network computers, or compute nodes, each with their own processors and memory. The key difference between *distributed* memory systems and their **shared-memory** counterparts is that each compute node under the distributed model (MPI) has its own memory address space, and special messages must be sent between each node to exchange data. The message sending and receiving is a key part of writing MPI programs.
+
+## A very basic example: calculating pi
+
+There are dozens of hello world example MPI programs, but these are fairly trivial examples and don't really show how a real computing problem might be broken up and shared between compute nodes (Do you really need a supercomputer to `std::cout` "Hello, World!"?). This example uses an approximation for calculating pi to many significant digits. The approximation is given by:
+
+
+
+where the answer becomes more acurate with increasing N.

@@ -4,14 +4,94 @@ title: Intro to MPI programming  in C++
 tags: c++ MPI parallel-proecessing
 ---
 
-**Some notes from the MPI course at EPCC, Summer 2016**
+*Some notes from the MPI course at EPCC, Summer 2016*
 
-MPI is the **Message Passing Interface**, a standard and series of libraries for writing parallel programs to run on distributed memory computing systems. Distributed memory systems are essentially a series of network computers, or compute nodes, each with their own processors and memory. The key difference between *distributed* memory systems and their **shared-memory** counterparts is that each compute node under the distributed model (MPI) has its own memory address space, and special messages must be sent between each node to exchange data. The message sending and receiving is a key part of writing MPI programs.
+MPI is the **Message Passing Interface**, a standard and series of libraries for writing parallel programs to run on distributed memory computing systems. Distributed memory systems are essentially a series of network computers, or compute nodes, each with their own processors and memory. The key difference between *distributed* memory systems and their *shared-memory* counterparts is that each compute node under the distributed model (MPI) has its own memory address space, and special messages must be sent between each node to exchange data. The message sending and receiving is a key part of writing MPI programs.
 
 ## A very basic example: calculating pi
 
 There are dozens of hello world example MPI programs, but these are fairly trivial examples and don't really show how a real computing problem might be broken up and shared between compute nodes (Do you really need a supercomputer to `std::cout` "Hello, World!"?). This example uses an approximation for calculating pi to many significant digits. The approximation is given by:
 
-$$\frac{\pi}{4} = \sum_{k=0}^\infty\frac{(-1)^k}{2k+1}$$
+EQN goes here...
 
 where the answer becomes more acurate with increasing N.
+
+The pseudo-code for the partial sum of pi for each iteration would be:
+
+{% highlight cpp %}
+this_bit_of_pi = this_bit_of_pi + 1.0 / ( 1.0 + ( (i-0.5) / N)*((i-0.5) / N) );
+{% endhighlight %}
+
+For a basic MPI-C++ program, the first bit of the program looks like this, including the MPI header and some variables declared:
+
+{% highlight cpp %}
+#include "mpi.h"
+#include <iostream>
+#include <cmath>
+
+int main()
+{
+  int rank;
+  int size;
+
+  int istart;
+  int istop;
+
+
+  MPI_Status status;
+  MPI_Comm comm;
+  comm = MPI_COMM_WORLD;
+
+  int N = 840;
+  double pi;
+
+  double receive_pi;
+  // this is used for later computation of pi
+  // from partial sums
+
+  MPI_Init(NULL, NULL);
+
+  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+  MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+  std::cout << "Hello from rank " << rank << std::endl;
+
+  //.. continues later
+{% endhighlight %}
+
+First, some variables are created to hold the *rank*, i.e. the current process, and the *size*, which is used to represent the total number of ranks, or processes.
+
+*istart* and *istop* will be used to calculate the iteration loop counter start and stop positions for each separate process.
+
+Secondly, the `MPI_Status` variable is defined, then the `MPI_Comm` type variable. These are special types defined in the MPI headers that relate to the message passing interface.
+
+The MPI environment is initialised with `MPI_Init(NULL, NULL);`. The you can initialise the rank and size variables using the corresponding commands in MPI_Comm_rank() and MPI_Comm_size, passing a reference to the communicator object, and the respective variable.
+
+By convention, the process with rank = 1 is used as the master process, and does the managing of collating data once it has been processed by the other ranks/processes.
+
+The parameter `N` is used in our pi approximation and will determine the number of iterations we do. It is used to calculate the number of iterations distributed to each process:
+
+{% highlight cpp %}
+  // Assuming N is exactly divisible by the number of processes
+  istart = N/size * rank + 1;
+  istop = istart + N/size -1;
+{% endhighlight %}
+
+Then each loop will calculate a partial sum of pi from its given subset of N.
+
+{% highlight cpp %}
+  // Check how the iterations have been divided up among 
+  // the processes:
+  std::cout << "On rank " << rank << " istart = " << istart \
+            << ", istop = " << istop << std::endl;
+
+  double this_bit_of_pi=0.0;
+  for (int i=istart; i<=istop; i++)
+  {
+    this_bit_of_pi = this_bit_of_pi + 1.0 / ( 1.0 + ( (i-0.5) / N)*((i-0.5) / N) );
+    //pi += this_bit_of_pi;
+  }
+
+  std::cout << "On rank " << rank << "Partial pi = " << this_bit_of_pi << std::endl;
+
+{% endhighlight %}

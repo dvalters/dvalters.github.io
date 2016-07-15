@@ -47,6 +47,6 @@ Blogroll:
       
 
 ### Build settings
-markdown: kramdown
+markdown: maruku
 highlighter: rouge
 paginate: 5

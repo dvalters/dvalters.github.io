@@ -12,7 +12,7 @@ MPI is the **Message Passing Interface**, a standard and series of libraries for
 
 There are dozens of hello world example MPI programs, but these are fairly trivial examples and don't really show how a real computing problem might be broken up and shared between compute nodes (Do you really need a supercomputer to `std::cout` "Hello, World!"?). This example uses an approximation for calculating pi to many significant digits. The approximation is given by:
 
-EQN goes here...
+
 
 where the answer becomes more acurate with increasing N.
 
@@ -78,6 +78,7 @@ The parameter `N` is used in our pi approximation and will determine the number 
 {% endhighlight %}
 
 Then each loop will calculate a partial sum of pi from its given subset of N.
+Because the MPI processes have been initailised, as well as the variables for rank and size, the code below will have unique values of istart and istop for each rank/process:
 
 {% highlight cpp %}
   // Check how the iterations have been divided up among 
@@ -89,9 +90,61 @@ Then each loop will calculate a partial sum of pi from its given subset of N.
   for (int i=istart; i<=istop; i++)
   {
     this_bit_of_pi = this_bit_of_pi + 1.0 / ( 1.0 + ( (i-0.5) / N)*((i-0.5) / N) );
-    //pi += this_bit_of_pi;
   }
 
   std::cout << "On rank " << rank << "Partial pi = " << this_bit_of_pi << std::endl;
 
 {% endhighlight %}
+
+Our partial sums have now been calculated, the last task is to collate them all together on the master process (rank=0), and sum them up:
+
+{% highlight cpp %}
+  if (rank == 0) // By convention, rank 0 is the master
+  {
+    // take the value of pi from the Master's local copy of the 
+    // partial sum
+    pi = this_bit_of_pi;
+    for (int source = 1; source < size; source++)
+    {
+      // Now we want to grab the parial pi sums from ranks
+      // greater than zero (so start at source =1)
+      int tag = 0;
+
+      MPI_Recv(&receive_pi, 1, MPI_DOUBLE, MPI_ANY_SOURCE, tag, comm, &status);
+
+      std::cout << "MASTER (rank 0) receiving from rank " << status.MPI_SOURCE \
+                << std::endl;
+
+      // Now add to received partial sum to the running total
+      pi += receive_pi;
+    }
+  }
+{% endhighlight %}
+
+The key part of the above code is that we are telling the master process (rank=0) to be ready to **receive** all the partial sums of pi. MPI requires both send and receive calls. However, the **send** command has to be issued from the respective processes themselves (There's no 'get' command *per se*, it's a two-stage process that has to be set up on each process correctly).
+
+Now we tell the non-master processes to send their partial pi sums:
+
+{% highlight cpp %}
+  else // i.e. else not rank=0...not on the master process
+  {
+    // Now send the other partial sums from each process to the master
+    int tag = 0;
+
+    std::cout << "Rank " << rank << " sending to rank 0 (MASTER)" << std::endl;
+    // Use a synchronous send (Ssend)
+    MPI_Ssend(&this_bit_of_pi, 1, MPI_DOUBLE, 0, tag, comm);
+  }
+{% endhighlight %}
+
+So now we've issued a command to send all the bits of pi, specified the data type, `MPI_DOUBLE` and passed the other arguments required by `MPI_Ssend()`.
+
+Finally, we can do the last bit of the calculation needed in the original formual by multiplying by four. Then finalise the MPI processes.
+
+{% highlight cpp %}
+  pi = pi * 4.0/(static_cast<double>(N));
+
+  MPI_Finalize();
+{% endhighlight %}.
+
+The full program is given in a github Gist, which I will either embedd or provide a link to soon. 

@@ -14,8 +14,8 @@ There are dozens of hello world example MPI programs, but these are fairly trivi
 
 $$
 \begin{align}
-\frac{\pi}{4} & = \arctan(1)\;=\;\int_0^1 \frac 1{1+x^2} \, dx
-& = \int_0^1\left(\sum_{k=0}^n (-1)^k x^{2k}+\frac{(-1)^{n+1}\,x^{2n+2} }{1+x^2}\right) \, dx \\[8pt]
+\frac{\pi}{4} & = \arctan(1)\;=\;\int_0^1 \frac 1{1+x^2} \, dx \\
+& = \int_0^1\left(\sum_{k=0}^n (-1)^k x^{2k}+\frac{(-1)^{n+1}\,x^{2n+2} }{1+x^2}\right) \, dx \\
 & = \sum_{k=0}^n \frac{(-1)^k}{2k+1}
 +(-1)^{n+1}\int_0^1\frac{x^{2n+2}}{1+x^2} \, dx.
 \end{align}

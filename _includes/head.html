@@ -26,7 +26,9 @@
 
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-
+    {% if page.use_math %}
+      {% include mathjax_support %}
+    {% endif %}
 </head>
 
 

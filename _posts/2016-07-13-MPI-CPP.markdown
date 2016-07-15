@@ -14,14 +14,14 @@ MPI is the **Message Passing Interface**, a standard and series of libraries for
 There are dozens of hello world example MPI programs, but these are fairly trivial examples and don't really show how a real computing problem might be broken up and shared between compute nodes (Do you really need a supercomputer to `std::cout` "Hello, World!"?). This example uses an approximation for calculating pi to many significant digits. The approximation is given by:
 
 $$
-\\begin{align}
-\frac{\pi}{4} & = \arctan(1)\;=\;\int_0^1 \frac 1{1+x^2} \, dx \\
-& = \int_0^1\left(\sum_{k=0}^n (-1)^k x^{2k}+\frac{(-1)^{n+1}\,x^{2n+2} }{1+x^2}\right) \, dx \\
-& = \sum_{k=0}^n \frac{(-1)^k}{2k+1}
-+(-1)^{n+1}\int_0^1\frac{x^{2n+2}}{1+x^2} \, dx.
-\\end{align}
-
-\\frac{\pi}4\;=\;\sum_{k=0}^\infty\frac{(-1)^k}{2k+1}
+  \\begin{align}
+  \frac{\pi}{4} & = \arctan(1)\;=\;\int_0^1 \frac 1{1+x^2} \, dx \\
+  & = \int_0^1\left(\sum_{k=0}^n (-1)^k x^{2k}+\frac{(-1)^{n+1}\,x^{2n+2} }{1+x^2}\right) \, dx \\\\
+  & = \sum_{k=0}^n \frac{(-1)^k}{2k+1}
+  +(-1)^{n+1}\int_0^1\frac{x^{2n+2}}{1+x^2} \, dx.
+  \\end{align}
+  
+  \\frac{\pi}4\;=\;\sum_{k=0}^\infty\frac{(-1)^k}{2k+1}
 $$
 
 where the answer becomes more acurate with increasing N.

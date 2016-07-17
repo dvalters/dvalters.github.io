@@ -16,6 +16,8 @@ The executable LSDCatchmentModel.out was compiled with the -O2 level of optimisa
 
 Each node on ARCHER consists of two Intel Xeon processors, each with 32GB of memory. (So 64GB in total for the whole node, which either processor can access). Each one of these CPUs, with its corresponding memory, forms what is called a NUMA node or NUMA-region. It is generally much faster for a CPU to access its local NUMA node memory, but the full 64GB is available. Accessing the "remote" NUMA region will have higher latency and may slow down performance. 
 
+![A single ARCHER compute node set-up. Reproduced from ARCHER website under the terms of the creative commons licence displayed in the sidebar of this page.](/images/xc30computenode.png)
+
 ## Options for Optimisation
 
 Programs on ARCHER are launched with the `aprun` command, which requests the number of resources you want and their configuration. There are a vast number of options/arguments you can specify with this command, but I'll just note the  important ones here: 

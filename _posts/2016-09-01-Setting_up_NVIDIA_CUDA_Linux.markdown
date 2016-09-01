@@ -10,11 +10,11 @@ This post documents how I set up an NVIDIA CUDA GPU card on linux, specifically 
 
 I found the whole process of setting up this card under linux to be problematic. NVIDIA's own guidance on their website did not seem to work, and in the end it required patching together bits of information from different sources. Here it is for future record:
 
-Card: NVIDIA Quadro K1200 (PNY Low profile version)
-Computer: HP desktop, integrated graphics on motherboard (Disabled in BIOS - though in hindsight I don't know if this was really necessary.)
-Linux versions: Attempted on Fedora 23 (FAIL), Scientific Linux 6.7 (OK), CentOS 7.2 (OK)
+* *Card*: NVIDIA Quadro K1200 (PNY Low profile version)
+* *Computer*: HP desktop, integrated graphics on motherboard (Disabled in BIOS - though in hindsight I don't know if this was really necessary.)
+* *Linux version(s)*: Attempted on Fedora 23 (*FAIL*), Scientific Linux 6.7 (*OK*), CentOS 7.2 (O*K*)
 
-## 1st Attempt: Using the NVIDA rpm package (FAIL)
+## 1st Attempt: Using the NVIDA rpm package (*FAIL*)
 
 This is the recommended installation route from NVIDIA. Bascially you download the relevant package manager install package. I was using CentOS so downloaded the RHEL/CentOS 7 `.rpm` file. You then add this to your package manager (e.g. yum). For RHEL/CentOS, you must have the `epel-release` repository enabled in yum:
 
@@ -35,7 +35,7 @@ It will install a load of package dependencies, the CUDA package, as well as the
 
 I reverted to the earlier working state by launching in text mode and using `yum history undo` to revert all the installed packages in the previous step.
 
-## 2nd Attempt: Using the NVIDIA runfile shell script
+## 2nd Attempt: Using the NVIDIA runfile shell script (*SUCCESS*)
 
 A second alternative is provided by NVIDIA, involving a shell script that installs the complete package as a platform-independent version. It bypasses the package manager completely and installs the relevant headers and drivers "manually". NVIDIA don't recommend this unless they don't supply a ready-made package for your OS, but I had already tried packages for Scientific Linux/RedHat, CentOS, and Fedora without success.
 

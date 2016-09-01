@@ -8,7 +8,7 @@ This post documents how I set up an NVIDIA CUDA GPU card on linux, specifically 
 
 ![Time for some PyCUDA...after hours trying to set the thing up](/images/IMG_20160806_132707.jpg)
 
-I found the whole process of setting up this card under linux to be problematic. NVIDIA's own guidance on their website did not seem to work, and in the end it required patching together bits of information from different sources. Here it is for future record:
+I found the whole process of setting up this card under linux to be problematic. [NVIDIA's own guidance](http://docs.nvidia.com/cuda/cuda-getting-started-guide-for-linux/#axzz4IzSIPWBM) on their website did not seem to work, and in the end it required patching together bits of information from different sources. Here it is for future record:
 
 * **Card**: NVIDIA Quadro K1200 (PNY Low profile version)
 * **Computer**: HP desktop, integrated graphics on motherboard (Disabled in BIOS - though in hindsight I don't know if this was really necessary.)

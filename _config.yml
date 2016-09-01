@@ -13,8 +13,8 @@ locale: en_US
 twitter_username: dvalts
 github_username:  decvalts
 favicon:     
-aboutme: Hello, World! # these are shown on aboutme-sidebar.
-aboutme_photo:  # your photo.
+aboutme: I like writing code for scientific research. Occasionally tinkering with other non-sciency projects too.   # these are shown on aboutme-sidebar.
+aboutme_photo:  "/images/flowers.jpeg"
 
 
 ### Site setting:
@@ -40,9 +40,17 @@ locales:
 ### your Blogroll info, only name can shown on the page.
 
 Blogroll:
+    - name: LSDCodingBlog
+      href: https://lsdtopotools.github.io/LSDCodingBlog/
+      title: Blog I contribute to about the coding process for LSDTopoTools
+      
     - name: LSDTopoTools
       href: http://LSDtopotools.github.io
       title: LSDTopoTools homepage
+      
+    - name: PyCAS
+      href: https://atmoscoders.github.io/PyCAS/home
+      title: A python users group in the Centre for Atmospheric Science
 
       
 

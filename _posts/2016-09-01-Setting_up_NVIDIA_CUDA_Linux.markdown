@@ -12,9 +12,9 @@ I found the whole process of setting up this card under linux to be problematic.
 
 * **Card**: NVIDIA Quadro K1200 (PNY Low profile version)
 * **Computer**: HP desktop, integrated graphics on motherboard (Disabled in BIOS - though in hindsight I don't know if this was really necessary.)
-* **Linux version(s)**: Attempted on Fedora 23 (**FAIL**), Scientific Linux 6.7 (**OK**), CentOS 7.2 (**OK**)
+* **Linux version(s)**: Attempted on Fedora 23 (**FAIL**), Scientific Linux 6.7 (**OK**), CentOS 7.2 (**OK**). *Officially, the installation scripts/packages only support Fedora 21, but I thought I would give it a try at least.*
 
-## 1st Attempt: Using the NVIDA rpm package (**FAIL**)
+## 1st Attempt: Using the NVIDA rpm package (FAIL)
 
 This is the recommended installation route from NVIDIA. Bascially you [download the relevant package manager install package](https://developer.nvidia.com/cuda-downloads). I was using CentOS so downloaded the RHEL/CentOS 7 `.rpm` file. You then add this to your package manager (e.g. yum). For RHEL/CentOS, you must have the `epel-release` repository enabled in yum:
 
@@ -31,11 +31,11 @@ yum clean expire-cache
 yum install cuda
 {% endhighlight %}
 
-It will install a load of package dependencies, the CUDA package, as well as the proprietary NVIDIA drivers for the card. I rebooted, only to find I could no longer launch CentOS in graphical mode. It would hang when trying to load the X-server driver files on boot. Only a text interface login was possible. Further playing around with the linux system logs showed there was a conflict with some of the OpenGL X11 libraries being loaded. 
+It will install a load of package dependencies, the CUDA package, as well as the proprietary NVIDIA drivers for the card. **I rebooted, only to find I could no longer launch CentOS in graphical mode.** It would hang when trying to load the X-server driver files on boot. Only a text interface login was possible. Further playing around with the linux system logs showed there was a conflict with some of the OpenGL X11 libraries being loaded. 
 
 I reverted to the earlier working state by launching in text mode and using `yum history undo` to revert all the installed packages in the previous step.
 
-## 2nd Attempt: Using the NVIDIA runfile shell script (**SUCCESS**)
+## 2nd Attempt: Using the NVIDIA runfile shell script (SUCCESS)
 
 A second alternative is provided by NVIDIA, involving a shell script that installs the complete package as a platform-independent version. It bypasses the package manager completely and installs the relevant headers and drivers "manually". NVIDIA don't recommend this unless they don't supply a ready-made package for your OS, but I had already tried packages for Scientific Linux/RedHat, CentOS, and Fedora without success.
 

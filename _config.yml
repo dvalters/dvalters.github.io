@@ -14,7 +14,7 @@ twitter_username: dvalts
 github_username:  decvalts
 favicon:     
 aboutme: I like writing code for scientific research. Occasionally tinkering with other non-sciency projects too.   # these are shown on aboutme-sidebar.
-aboutme_photo:  "/images/flowers.jpeg"
+aboutme_photo:  "images/flowers.jpeg"
 
 
 ### Site setting:

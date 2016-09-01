@@ -16,7 +16,7 @@ I found the whole process of setting up this card under linux to be problematic.
 
 ## 1st Attempt: Using the NVIDA rpm package (**FAIL**)
 
-This is the recommended installation route from NVIDIA. Bascially you download the relevant package manager install package. I was using CentOS so downloaded the RHEL/CentOS 7 `.rpm` file. You then add this to your package manager (e.g. yum). For RHEL/CentOS, you must have the `epel-release` repository enabled in yum:
+This is the recommended installation route from NVIDIA. Bascially you [download the relevant package manager install package](https://developer.nvidia.com/cuda-downloads). I was using CentOS so downloaded the RHEL/CentOS 7 `.rpm` file. You then add this to your package manager (e.g. yum). For RHEL/CentOS, you must have the `epel-release` repository enabled in yum:
 
 `yum install epel-release`
 

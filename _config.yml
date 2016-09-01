@@ -12,7 +12,7 @@ locale: en_US
 ### Personal info and site tools info:
 twitter_username: dvalts
 github_username:  decvalts
-favicon:     "/images/favicon.ico"
+favicon:     
 aboutme: Hello, World! # these are shown on aboutme-sidebar.
 aboutme_photo:  # your photo.
 

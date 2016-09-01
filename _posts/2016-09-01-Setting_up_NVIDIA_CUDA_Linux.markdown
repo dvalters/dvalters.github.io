@@ -6,9 +6,9 @@ tags: GPGPU linux
 
 This post documents how I set up an NVIDIA CUDA GPU card on linux, specifically for CUDA computing (i.e. using it solely for GPGPU purposes). I already had a separate (AMD) graphics card I used for video output, and I wanted the NVIDIA card to be used only for computation, with no video use.
 
-![Time for some PyCUDA...after hours trying to set the thing up](/images/IMG_20160806_132707.jpg)
+![Time for some PyCUDA...after hours trying to set the thing up](/images/IMG_20160806_132707.jpg "Time for some PyCUDA...after hours trying to set the bloody thing up")
 
-I found the whole process of setting up this card under linux to be problematic. [NVIDIA's own guidance](http://docs.nvidia.com/cuda/cuda-getting-started-guide-for-linux/#axzz4IzSIPWBM) on their website did not seem to work, and in the end it required patching together bits of information from different sources. Here it is for future record:
+I found the whole process of setting up this card under linux to be problematic. [NVIDIA's own guidance](http://docs.nvidia.com/cuda/cuda-getting-started-guide-for-linux/#axzz4IzSIPWBM) on their website did not seem to work (OK, in fairness, you can sort of figure it out from the expanded [installation guide pdf](http://developer.download.nvidia.com/compute/cuda/6_5/rel/docs/CUDA_Getting_Started_Linux.pdf)), and in the end it required patching together bits of information from different sources. Here it is for future record:
 
 * **Card**: NVIDIA Quadro K1200 (PNY Low profile version)
 * **Computer**: HP desktop, integrated graphics on motherboard (Disabled in BIOS - though in hindsight I don't know if this was really necessary.)

@@ -8,7 +8,7 @@ permalink: /about/
 
 ### dvalts' blog
 
-Random thoughts about code and sometimes other things
+Hello! This blog is mainly for my notes about writing code, software design and so on. Occasionally I might post more wordy blogposts on other topics. I'm currently a PhD student developing numerical models to study how different patterns of rainfall drive land surface erosion and landscape evolution. My academic/research webpage is [over here.](http://personalpages.manchester.ac.uk/staff/declan.valters/). Don't worry, it links back to here where all the juicy programming stuff is :)
 
 This website is based on the [Freshmen21 theme](https://http://jekyllthemes.org/themes/freshman21/) by [Lijia Yu](http://yulijia.net/).
 

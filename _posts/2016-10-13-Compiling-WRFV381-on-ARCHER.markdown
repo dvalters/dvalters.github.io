@@ -4,7 +4,7 @@ title: Compiling WRF v3.8.1 on ARCHER (Cray XC system)
 tags: compilation WRF archer
 ---
 
-This post documents how to compile the latest release of WRF (version 3.8.1) on the ARCHER HPC service. There is already a compiled version available on archer that be accessed using the modules funciton ([see this guide](http://www.archer.ac.uk/documentation/software/wrf/index.php)), but you will need to be able to compile from the source code if you are making any modifications to the code, or if you need to compile the idealised cases, or need to compile it ith a different nesting set up. (The pre-compiled code is set up for basic nesting only).
+This post documents how to compile the latest release of WRF (version 3.8.1) on the ARCHER HPC service. There is already a compiled version available on archer that be accessed using the modules funciton ([see this guide](http://www.archer.ac.uk/documentation/software/wrf/index.php)), but you will need to be able to compile from the source code if you are making any modifications to the code, or if you need to compile the idealised cases, or need to compile it with a different nesting set up. (The pre-compiled code is set up for basic nesting only).
 
 ## Compilation with the default ARCHER compiler (Cray CCE)
 
@@ -26,6 +26,7 @@ So we are going to prepare three things:
 
 This is a shell script (of the bash flavour) that loads the relevant modules for WRF to compile.
 
+__pre-build.bash__
 {% highlight bash %}
 
 # Set the cray compiler wrappers. Cray uses the same wrappers,
@@ -60,6 +61,7 @@ Note that you may need to switch a `load` statement for a `swap` statement in so
 
 NOTE: `.profile` (in the `$HOME` directory is only loaded on the login shells. If you launch any other interactive shells (like an interactive job mode), then `.bashrc` will get loaded.
 
+__pre-build.bash__ (continued)
 {% highlight bash %}
 # ...continued
 

@@ -126,8 +126,9 @@ The following discussion boards and mailing list answers were helpful in prepari
 [](http://forum.wrfforum.com/viewtopic.php?f=6&t=4512)
 
 Also two useful blogposts from NCAR:
-[Analysis, FOrecast, Reanalysis, What's the difference?](http://ncarrda.blogspot.co.uk/2015/04/analysis-forecast-reanalysis-whats.html)
-[WRF-able datasets](http://ncarrda.blogspot.co.uk/2016/01/wrf-able-datasets.html)
+[Analysis, Forecast, Reanalysis, What's the difference?](http://ncarrda.blogspot.co.uk/2015/04/analysis-forecast-reanalysis-whats.html).
+
+[WRF-able datasets](http://ncarrda.blogspot.co.uk/2016/01/wrf-able-datasets.html).
 
 
 

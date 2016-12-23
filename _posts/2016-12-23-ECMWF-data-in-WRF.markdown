@@ -121,9 +121,9 @@ You are now set to run real.exe to generate the lateral boundary conditions and 
 
 The following discussion boards and mailing list answers were helpful in preparing this post:
 
-[](http://www2.mmm.ucar.edu/wrf/users/FAQ_files/FAQ_wps_input_data.html)
-[](http://forum.wrfforum.com/viewtopic.php?f=22&t=1001)
-[](http://forum.wrfforum.com/viewtopic.php?f=6&t=4512)
+http://www2.mmm.ucar.edu/wrf/users/FAQ_files/FAQ_wps_input_data.html
+http://forum.wrfforum.com/viewtopic.php?f=22&t=1001
+http://forum.wrfforum.com/viewtopic.php?f=6&t=4512
 
 
 

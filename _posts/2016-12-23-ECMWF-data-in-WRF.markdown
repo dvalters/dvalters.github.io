@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Initialising the WRF model with ECMWF ERA-20C data
+title: Initialising the WRF model with ECMWF ERA-20C reanalysis data
 tags: WRF era20c NWP
 ---
 
@@ -121,9 +121,15 @@ You are now set to run real.exe to generate the lateral boundary conditions and 
 
 The following discussion boards and mailing list answers were helpful in preparing this post:
 
-http://www2.mmm.ucar.edu/wrf/users/FAQ_files/FAQ_wps_input_data.html
-http://forum.wrfforum.com/viewtopic.php?f=22&t=1001
-http://forum.wrfforum.com/viewtopic.php?f=6&t=4512
+[](http://www2.mmm.ucar.edu/wrf/users/FAQ_files/FAQ_wps_input_data.html)
+[](http://forum.wrfforum.com/viewtopic.php?f=22&t=1001)
+[](http://forum.wrfforum.com/viewtopic.php?f=6&t=4512)
+
+Also two useful blogposts from NCAR:
+[Analysis, FOrecast, Reanalysis, What's the difference?](http://ncarrda.blogspot.co.uk/2015/04/analysis-forecast-reanalysis-whats.html)
+[WRF-able datasets](http://ncarrda.blogspot.co.uk/2016/01/wrf-able-datasets.html)
+
+
 
 
 

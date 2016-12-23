@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Initialising the WRF model with ECMWF ERA-20C data
-tags: WRF era20c NWP model-initialisation
+tags: WRF era20c NWP
 ---
 
 The Weather Research and Forecasting model (WRF) can be initialised with a range of input data sources for simulations. The initialisation step describes the setting of grid parameters within the model domain (pressure, surface variables, etc.) as well as defining the boundary conditions for the model. If you have followed the excellent [WRF tutorial](http://www2.mmm.ucar.edu/wrf/OnLineTutorial/Introduction/index.html) and run a few of the [case studies with real data](http://www2.mmm.ucar.edu/wrf/OnLineTutorial/CASES/index.html) the input data is provided for you and is already tested to ensure it can be pre-processed relatively painlessly by the WPS (WRF pre-processing system). Datsets from North American providers are extenisvely tested with WRF, (i.e. GFS data (global), AWIP (North American continent area))
@@ -57,7 +57,7 @@ to the python download script, and your grib data will be supplied in Gaussian g
 ## Ungribbing the data
 Now we need to 'ungrib' data to convert into the WPS intermediate file format, before running metgrid. This has to be done in two stages - one for the surface and pressure level data, and one for the land-sea mask. This is because the land-sea mask has a 'start date' of 1900-01-01 if you try to run ungrib with the date of your case study, ungrib will fail, complaining that the dates specified could not be found. In the namelist.wps file, I set the the `&ungrib` section to the following:
 
-{% highlight %}
+{% highlight bash %}
 &ungrib
   out_format = 'WPS',
   prefix = 'FIX',
@@ -65,7 +65,7 @@ Now we need to 'ungrib' data to convert into the WPS intermediate file format, b
 
 Link your land-sea mask to the WPS directory with the `link_grib.sh` script and run ungrib. Repeat again for the surface and pressure data but with the following section in the namelist.wps file:
 
-{% highlight %}
+{% highlight bash %}
 &ungrib
   out_format = 'WPS',
   prefix = 'FILE',
@@ -80,7 +80,7 @@ Metgrid interpolates your ungribbed data files over the model domain. (I haven't
 
 If you are using the sea surface temparatures field from the ECMWF data, you'll need to make a few changes to the METGRID.TBL file for it to correctly interpolate and mask the sea surface temparatures around land. IN the METGRID.TBL file (located in WPS/metgrid/), change the entry of the SST field to the following:
 
-{% highlight %}
+{% highlight bash %}
 SST
   interp_option=sixteen_pt+four_pt+wt_average_4pt+wt_average_16pt+search
   missing_value=-1.E30
@@ -92,7 +92,7 @@ SST
 
 The changes are to make the interp_mask use the LANDMASK mask instead of LANDSEA (the default), and to change the interpolation option slightly. Without the changes, I found that for my inner domain the sea surface temperatures were incorrectly masked, and had been interpolated over land as well. Although metgrid.exe did not complain when run, the met files generated caused an error when real.exe was run - generating an error message saying:
 
-{% highlight %}
+{% highlight bash %}
 -------------- FATAL CALLED ---------------
 FATAL CALLED FROM FILE:  <stdin>  LINE:    2970
 mismatch_landmask_ivgtyp
@@ -103,7 +103,7 @@ The changes to METGRID.TBL should remedy this error message.
 
 Before running metgrid, there is one last change to make to the namelist.wps file:
 
-{% highlight %}
+{% highlight bash %}
 &metgrid
   fg_name = 'FILE',
   constants_name = 'FIX:1900-01-01_00',

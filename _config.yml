@@ -1,20 +1,20 @@
 ### Site info:
 title: /dav/null
-tagline: Posts about code etc. 
-author: dvalts 
+tagline: Software Engineer
+author: dvalts
 email: dvalts@gmail.com
-description: "dvalts' ramblings about code and life" # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
+description: "dvalts' ramblings about software and programming" # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
 keywords: "c++, python"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://decvalts.github.io" # the base hostname & protocol for your site
+url: "http://dvalters.github.io" # the base hostname & protocol for your site
 locale: en_US
 
 ### Personal info and site tools info:
 twitter_username: dvalts
-github_username:  decvalts
-favicon:     
+github_username:  dvalters
+favicon:
 aboutme: I like writing code for scientific research. Occasionally tinkering with other non-sciencey projects too.  # these are shown on aboutme-sidebar.
-aboutme_photo:  "/images/flowers.jpeg"
+aboutme_photo:  "/images/profile.jpeg"
 
 
 ### Site setting:
@@ -34,7 +34,7 @@ locales:
       Previous: "Older"
       Next: "Newer"
       PostedInCategories: "Posted in"
-      Taggedwith: "and tagged"  
+      Taggedwith: "and tagged"
       PostDate: "on "
 
 ### your Blogroll info, only name can shown on the page.
@@ -43,16 +43,16 @@ Blogroll:
     - name: LSDCodingBlog
       href: https://lsdtopotools.github.io/LSDCodingBlog/
       title: Blog I contribute to about the coding process for LSDTopoTools
-      
+
     - name: LSDTopoTools
       href: http://LSDtopotools.github.io
       title: LSDTopoTools homepage
-      
+
     - name: PyCAS
       href: https://atmoscoders.github.io/PyCAS/home
       title: A python users group in the Centre for Atmospheric Science
 
-      
+
 
 ### Build settings
 markdown: kramdown

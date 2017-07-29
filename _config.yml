@@ -1,9 +1,9 @@
 ### Site info:
 title: /dav/null
-tagline: Software Engineer
+tagline: Declan Valters - Scientific Software Engineer
 author: dvalts
 email: dvalts@gmail.com
-description: "dvalts' ramblings about software and programming" # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
+description: "Declan Valters - Scientific Software Engineer" # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
 keywords: "c++, python"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://dvalters.github.io" # the base hostname & protocol for your site
@@ -13,7 +13,7 @@ locale: en_US
 twitter_username: dvalts
 github_username:  dvalters
 favicon:
-aboutme: I like writing code for scientific research. Occasionally tinkering with other non-sciencey projects too.  # these are shown on aboutme-sidebar.
+aboutme: Software engineer developing scientific applications. Interested in HPC, C++, Fotran, Python, and parallelisation.   # these are shown on aboutme-sidebar.
 aboutme_photo:  "/images/profile.jpeg"
 
 

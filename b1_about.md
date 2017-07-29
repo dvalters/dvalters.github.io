@@ -1,12 +1,9 @@
 ---
 layout: page
-title: About
+title: Declan Valters
 comments: yes
 permalink: /about/
 ---
-
-# Declan Valters
-_Scientific Software Engineer_
 
 I'm a sofftware engineer interested in designing and developing scientific applications, particularly for geosciences and high-performance computing. Technologies that I'm interested in include C++, Fortran, Python, MPI, OpenMP, and Linux operating systems.
 

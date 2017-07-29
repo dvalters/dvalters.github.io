@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Declan Valters
+title: About
 comments: yes
 permalink: /about/
 ---

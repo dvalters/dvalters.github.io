@@ -194,6 +194,8 @@ print "Million Genny: ", asizeof.asizeof(genny)
 >> Million Listy:  56697472
 >> Million Genny:  56250176
 
+{% end highlight %}
+
 ## memory_profiler
 
 Another option is the ``memory_profiler`` package. This provides another IPython magic command: ``%memit``, which can be used like so:

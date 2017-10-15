@@ -88,10 +88,10 @@ Using our integer list building methods:
 
 {% highlight console %}
 %timeit list_ints_comprehension(100000)
->> 100000 loops, best of 3: 8.74 ms per loop
+#>> 100000 loops, best of 3: 8.74 ms per loop
 
 %timeit list_ints_generator(100000)
->> 100000 loops, best of 3: 11.2 ms per loop
+#>> 100000 loops, best of 3: 11.2 ms per loop
 
 {% endhighlight %}
 
@@ -113,8 +113,8 @@ print "Eight Listy: ", sys.getsizeof(listy)
 genny = list_strings_generator(8)
 print "Eight Genny: ", sys.getsizeof(genny)
 
->> Eight Listy:  136
->> Eight Genny:  168
+#>> Eight Listy:  136
+#>> Eight Genny:  168
 
 # Ten
 listy = list_strings_comprehension(10)
@@ -123,8 +123,8 @@ print "Ten Listy: ", sys.getsizeof(listy)
 genny = list_strings_generator(10)
 print "Ten Genny: ", sys.getsizeof(genny)
 
->> Ten Listy:  200
->> Ten Genny:  168
+#>> Ten Listy:  200
+#>> Ten Genny:  168
 
 # 100
 listy = list_strings_comprehension(100)
@@ -133,8 +133,8 @@ print "Small Listy: ", sys.getsizeof(listy)
 genny = list_strings_generator(100)
 print "Small Genny: ", sys.getsizeof(genny)
 
->> Small Listy:  920
->> Small Genny:  992
+#>> Small Listy:  920
+#>> Small Genny:  992
 
 # 1000
 listy = list_strings_comprehension(1000)
@@ -143,8 +143,8 @@ print "Medium Listy: ", sys.getsizeof(listy)
 genny = list_strings_generator(1000)
 print "Medium Genny: ", sys.getsizeof(genny)
 
->> Medium Listy:  9032
->> Medium Genny:  8552
+#>> Medium Listy:  9032
+#>> Medium Genny:  8552
 
 # One million
 listy = list_strings_comprehension(1000000)
@@ -153,8 +153,8 @@ print "Big Listy: ", sys.getsizeof(listy)
 genny = list_strings_generator(1000000)
 print "Big Genny: ", sys.getsizeof(genny)
 
->> Big Listy:  8697472
->> Big Genny:  8250176
+#>> Big Listy:  8697472
+#>> Big Genny:  8250176
 
 {% endhighlight %}
 
@@ -173,8 +173,8 @@ print "Medium Listy: ", asizeof.asizeof(listy)
 genny = list_strings_generator(1000)
 print "Medium Genny: ", asizeof.asizeof(genny)
 
->> Medium Listy:  57032
->> Medium Genny:  56552
+#>> Medium Listy:  57032
+#>> Medium Genny:  56552
 
 listy = list_strings_comprehension(100000)
 print "Big Listy: ", asizeof.asizeof(listy)
@@ -182,8 +182,8 @@ print "Big Listy: ", asizeof.asizeof(listy)
 genny = list_strings_generator(100000)
 print "Big Genny: ", asizeof.asizeof(genny)
 
->> Big Listy:  5624472
->> Big Genny:  5679848
+#>> Big Listy:  5624472
+#>> Big Genny:  5679848
 
 listy = list_strings_comprehension(1000000)
 print "Million Listy: ", asizeof.asizeof(listy)
@@ -191,8 +191,8 @@ print "Million Listy: ", asizeof.asizeof(listy)
 genny = list_strings_generator(1000000)
 print "Million Genny: ", asizeof.asizeof(genny)
 
->> Million Listy:  56697472
->> Million Genny:  56250176
+#>> Million Listy:  56697472
+#>> Million Genny:  56250176
 
 {% endhighlight %}
 
@@ -205,12 +205,12 @@ import gc
 gc.collect() # Run the garbage collector first.
 
 %memit -i 0.000001 list_strings_comprehension(1000000)
->> peak memory: 230.33 MiB, increment: 48.00 MiB
+#>> peak memory: 230.33 MiB, increment: 48.00 MiB
 
 gc.collect()
 %memit -i 0.000001 list_strings_generator(1000000)
->> peak memory: 233.61 MiB, increment: 51.27 MiB
+#>> peak memory: 233.61 MiB, increment: 51.27 MiB
 
 {% endhighlight %}
 
-Pympler's ``asizeof()`` says the list comprehension is bigger, ````memory_profiler says the generator sees the bigger memory footprint...TBC
+Pympler's ``asizeof()`` says the list comprehension is bigger, ``memory_profiler`` says the generator sees the bigger memory footprint...TBC

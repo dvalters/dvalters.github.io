@@ -15,7 +15,7 @@ Firstly a list comprehension can be built in python using:
 
 mylist = [x for x in somedata]
 
-{% end highlight %}
+{% endhighlight %}
 
 which constructs the list for every item in ``somedata``. The list comprehension may also be built out of a function that returns an item on return, e.g. ``[x for x in somefunc()]``. The important thing to note in list comprehensions is that the whole list is evaluated at once, this is in contrast to the generator expression which is "short-circuiting" and will exit early if the expression permits it so. Generators can be a useful alternative where an algorithm is likely to finish early if certain conditions are met. For example:
 
@@ -27,7 +27,7 @@ mybool = any([x for x in somefunc()])
 # Using a generator expression
 mybool = any(x for x in somefunc())
 
-{% end highlight %}
+{% endhighlight %}
 
 In the case of the list comprehension the entire list is evaluated first, and then run through the ``any()`` function. In the generator case, the ``any()`` test is evaluated every iteration of somefunc(), and if it returns true the any test can return early without having to build the entire list.
 
@@ -44,7 +44,7 @@ import string
 def randomword(length):
    return ''.join(random.choice(string.lowercase) for i in range(length))
 
-{% end highlight %}
+{% endhighlight %}
 
 Now we need a function that builds the lists using each method. First the list comprehension way:
 
@@ -55,7 +55,7 @@ def list_strings_comprehension(length):
     list_strings.sort()
     return list_strings
 
-{% end highlight %}
+{% endhighlight %}
 
 And now a function that uses the generator approach:
 
@@ -65,7 +65,7 @@ def list_strings_generator(length):
     listgen_strings = sorted(randomword(5) for i in range(length))
     return listgen_strings
 
-{% end highlight %}
+{% endhighlight %}
 
 Let's also create some functions for testing ints, just to see if there is any difference with the data type.
 
@@ -79,7 +79,7 @@ def list_ints_generator(length):
     listgen_ints = sorted(i for i in range(length))
     return listgen_ints
 
-{% end highlight %}
+{% endhighlight %}
 ## timeit
 
 Now we are going to test these methods with the ``timeit`` command, built in to the python interpreter. Using IPython, this can be run using the command: ``%timit [FUNCTION_NAME(ARGS)]``. Help for this command is accessed with ``%timeit?``.
@@ -93,7 +93,7 @@ Using our integer list building methods:
 %timeit list_ints_generator(100000)
 >> 100000 loops, best of 3: 11.2 ms per loop
 
-{% end highlight %}
+{% endhighlight %}
 
 So, it would appear at first approximation, the generator approach is slower, at least for building a list of integers this size.
 
@@ -156,7 +156,7 @@ print "Big Genny: ", sys.getsizeof(genny)
 >> Big Listy:  8697472
 >> Big Genny:  8250176
 
-{% end highlight %}
+{% endhighlight %}
 
 Interestingly, the generator performs better in most cases, execpt for the smallest example with eight strings. With larger lists than this, the generator approach consistently outperforms the list comprehension method in terms of its memory footpring, when building lists of strings and measuring with the ``sys.getsizeof()`` function.
 
@@ -194,7 +194,7 @@ print "Million Genny: ", asizeof.asizeof(genny)
 >> Million Listy:  56697472
 >> Million Genny:  56250176
 
-{% end highlight %}
+{% endhighlight %}
 
 ## memory_profiler
 
@@ -211,6 +211,6 @@ gc.collect()
 %memit -i 0.000001 list_strings_generator(1000000)
 >> peak memory: 233.61 MiB, increment: 51.27 MiB
 
-{% end highlight %}
+{% endhighlight %}
 
 Pympler's ``asizeof()`` says the list comprehension is bigger, ````memory_profiler says the generator sees the bigger memory footprint...TBC

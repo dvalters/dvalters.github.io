@@ -2,7 +2,7 @@
 layout: page
 title: About
 comments: yes
-permalink: /
+permalink: /about
 ---
 
 I'm a software engineer interested in designing and developing scientific applications, particularly for geosciences (hydrology, atmospheric science, geomorphology) and porting and optimising these applications for high-performance computing systems. Technologies that I'm interested in include Fortran, C++, Python, MPI, OpenMP, and Linux operating systems.

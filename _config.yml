@@ -5,7 +5,7 @@ author: dvalts
 email: dvalts@gmail.com
 description: "Declan Valters - Scientific Software Engineer" # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
 keywords: "c++, python, fortran, openmp"
-baseurl: "" # the subpath of your site, e.g. /blog
+#baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://dvalters.github.io" # the base hostname & protocol for your site
 locale: en_US
 

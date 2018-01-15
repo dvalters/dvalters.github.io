@@ -3,6 +3,7 @@ layout: post
 title: Intro to MPI programming  in C++
 tags: c++ MPI parallel-proecessing
 use_math: true
+categories: code
 ---
 
 *Some notes from the MPI course at EPCC, Summer 2016*

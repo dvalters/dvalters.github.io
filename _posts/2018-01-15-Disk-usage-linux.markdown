@@ -2,6 +2,7 @@
 title: Checking disk and file space usage in linux
 layout: post
 tags: linux unix
+categories: linux
 ---
 
 Here are some notes on the various ways to check disk space usage on linux:

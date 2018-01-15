@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Initialising the WRF model with ECMWF ERA-20C reanalysis data
-tags: WRF era20c NWP
+tags: WRF ERA20C NWP reanalysis
+categories: modelling data
 ---
 
 The Weather Research and Forecasting model (WRF) can be initialised with a range of input data sources for simulations. The initialisation step describes the setting of grid parameters within the model domain (pressure, surface variables, etc.) as well as defining the boundary conditions for the model. If you have followed the excellent [WRF tutorial](http://www2.mmm.ucar.edu/wrf/OnLineTutorial/Introduction/index.html) and run a few of the [case studies with real data](http://www2.mmm.ucar.edu/wrf/OnLineTutorial/CASES/index.html) the input data is provided for you and is already tested to ensure it can be pre-processed relatively painlessly by the WPS (WRF pre-processing system). Datsets from North American providers are extenisvely tested with WRF, (i.e. GFS data (global), AWIP (North American continent area))

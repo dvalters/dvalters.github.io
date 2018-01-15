@@ -2,7 +2,7 @@
 layout: post
 title: Generators or List comprehensions
 tags: python memory optimisation
-categories: code
+categories: code optimisation
 ---
 
 # Optimisations with python data structure generation

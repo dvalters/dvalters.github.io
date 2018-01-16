@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Compiling WRF v3.8.1 on ARCHER (Cray XC system)
-tags: compilation WRF archer
+tags: compilation WRF ARCHER HPC
+categories: modelling
 ---
 
 This post documents how to compile the latest release of WRF (version 3.8.1) on the ARCHER HPC service. There is already a compiled version available on archer that be accessed using the modules funciton ([see this guide](http://www.archer.ac.uk/documentation/software/wrf/index.php)), but you will need to be able to compile from the source code if you are making any modifications to the code, or if you need to compile the idealised cases, or need to compile it with a different nesting set up. (The pre-compiled code is set up for basic nesting only).

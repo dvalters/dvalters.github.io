@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Array sum reductions in OpenMP 4.5
-tags: arrays openmp openmp45 
+tags: arrays openmp openmp45 C++
+categories: optimisation code
 ---
 Some interesting new OpenMP functions in [OpenMP 4.5](http://developers.redhat.com/blog/2016/03/22/what-is-new-in-openmp-4-5-3/), including the potentially useful reduction on arrays for C and C++ now (this was previously supported for Fortran only).
 

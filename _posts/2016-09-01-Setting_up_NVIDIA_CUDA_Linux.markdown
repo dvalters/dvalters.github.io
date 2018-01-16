@@ -2,6 +2,7 @@
 layout: post
 title: Setting up an NVIDIA GPU card on Linux
 tags: GPGPU linux
+categories: linux
 ---
 
 This post documents how I set up an NVIDIA CUDA GPU card on linux, specifically for CUDA computing (i.e. using it solely for GPGPU purposes). I already had a separate (AMD) graphics card I used for video output, and I wanted the NVIDIA card to be used only for computation, with no video use.

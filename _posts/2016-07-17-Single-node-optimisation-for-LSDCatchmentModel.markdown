@@ -2,6 +2,7 @@
 layout: post
 title: Single-node optimisation for LSDCatchmentModel
 tags: threads LSDCatchmentModel shared-memory-model
+categories: modelling optimisation
 ---
 
 *I run the LSDCatchmentModel (soon to be released as **HAIL-CAESAR** package...) on the ARCHER supercomputing facility on single compute nodes. I.e. one instance of the program per node, using a shared-memory parallelisation model (OpenMP). Recently, I've being trying to find the optimum setup of CPUs/Cores/Threads etc per node. (While trying not to spend too much time on it!). Here are some of the notes:*

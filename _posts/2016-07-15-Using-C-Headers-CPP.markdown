@@ -2,6 +2,7 @@
 layout: post
 title: Using C libraries and headers in C++ programs
 tags: c++ c extern
+categories: code 
 ---
 
 C++ can make use of native C libraries and header files. (As long as there is no incompatible stuff in the C implementation that will not compile as valid C++, there are only a few of these exceptions).

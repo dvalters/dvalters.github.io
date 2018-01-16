@@ -7,9 +7,16 @@ categories: data modelling
 
 ## NCO (NetCDF Operators)
 
-You can merge netcdf files (say, along a time dimension) with the `nco` utility. (nco is actually a set of linux command line utilities for performing common operations on netcdf files.)
+You can merge netcdf files with the `nco` package. NCO is a set of linux command line utilities for performing common operations on netcdf files. This is useful for mergeing a set of files such as:
 
-To concatenate files, use `ncecat`
+```
+ModelRun_Jan.nc
+ModelRun_Feb.nc
+ModelRun_Mar.nc
+...
+```
+
+To concatenate files, use `ncecat`:
 
 ```
 ncecat *nc -O merged.nc
@@ -44,7 +51,7 @@ The NCO utilities are
 
 ## CDO (Climate Data Operators)
 
-This is an eually capable set of netCDF tools written by the Max Planck Institute for Meteorology. 
+This is an equally capable set of netCDF tools written by the Max Planck Institute for Meteorology. 
 
 [CDO tools page](https://code.mpimet.mpg.de/projects/cdo/)
 

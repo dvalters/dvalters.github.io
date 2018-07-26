@@ -1,5 +1,5 @@
 ---
-title: Python return statements
+title: Why do Python functions return None?
 layout: post
 tags: python
 ---

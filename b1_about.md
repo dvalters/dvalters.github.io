@@ -13,6 +13,6 @@ Previously I worked at the Met Office (UK), where I worked on developing [softwa
 
 I completed a PhD at the University of Manchester developing flood-inundation models (based on [CAESAR-Lisflood](https://sourceforge.net/projects/caesar-lisflood/)) to investigate how such models are sensitive to the choice of erosional process parametersiation and spatial resolution of rainfal data input. The spin-off model I developed ([HAIL-CAESAR](http://dvalts.io/HAIL-CAESAR/)) was parallelised and ported to the ARCHER HPC service to carry out sensitivity analyses using ensemble simulations. My thesis was titled: _Modelling catchment sensitivity to rainfall resolution and erosional parameterisation in simulations of flash floods in the UK._
 
-You can view my [latest CV over at github](https://github.com/dvalters/CV/blob/master/DAV_sept17_long.pdf)
+You can view my [latest CV over at github](https://github.com/dvalters/self/blob/master/CV/D_Valters_current_CV.pdf)
 
 This website is based on the Freshmen21 theme by [Lijia Yu](http://yulijia.net/).
